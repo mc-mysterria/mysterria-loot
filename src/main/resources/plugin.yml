@@ -1,0 +1,13 @@
+name: MDLootCatwalk
+version: '${version}'
+main: dev.ua.ikeepcalm.mdlootcatwalk.MDLootCatwalk
+api-version: '1.21'
+authors: [ ikeepcalm ]
+description: "MythicDungeons loot tables API for dynamic wiki generation"
+website: "https://uaproject.xyz"
+depend: [ CatWalk ]
+commands:
+  mdc:
+    description: "MDLootCatwalk commands"
+    usage: "/mdc <reload>"
+    permission: mdloot.admin

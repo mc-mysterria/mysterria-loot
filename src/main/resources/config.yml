@@ -1,0 +1,16 @@
+# MythicDungeons loot tables file location
+lootTablesFile: "plugins/MythicDungeons/loottables.yml"
+
+# Cache settings
+cache:
+  # Auto-reload cache when file changes (requires file watching)
+  autoReload: false
+  # Cache refresh interval in minutes (0 to disable periodic refresh)
+  refreshIntervalMinutes: 0
+
+# API settings
+api:
+  # Maximum items returned in search results
+  maxSearchResults: 100
+  # Include item stack details in responses
+  includeItemStackDetails: true
