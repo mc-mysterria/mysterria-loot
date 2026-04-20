@@ -1,0 +1,24 @@
+name: Trigger Deployment
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  notify-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch Build Event
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.DEPLOYMENT_HUB_TOKEN }}
+          repository: mc-mysterria/minecraft-deployment-config
+          event-type: plugin-updated
+          client-payload: |
+            {
+              "plugin_repo": "${{ github.repository }}",
+              "branch": "${{ github.ref_name }}",
+              "commit_sha": "${{ github.sha }}",
+              "actor": "${{ github.actor }}"
+            }
